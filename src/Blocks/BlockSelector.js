@@ -3,7 +3,7 @@ import BlockParagraph from './BlockParagraph';
 import BlockList from './BlockList';
 import BlockCodePen from './BlockCodePen';
 
-function Block(props) {
+function BlockSelector(props) {
     if (props.blockType === "paragraph") {
       return <BlockParagraph 
       blockContent={props.blockContent} 
@@ -19,4 +19,4 @@ function Block(props) {
     } 
 };
 
-export default Block;
+export default BlockSelector;

@@ -1,5 +1,5 @@
 import './App.css';
-import BlockEditor from './BlockEditor.js';
+import BlockEditor from './Blocks/BlockEditor.js';
 
 function App() {
   return (

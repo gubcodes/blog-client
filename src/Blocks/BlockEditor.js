@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Block from './Blocks/Block';
+import BlockSelector from './BlockSelector';
 
 //name ideas: ShortStack, breakUp, the Break Up
 
@@ -10,18 +10,14 @@ function BlockEditor() {
 
   let [blockTitleContent, setBlockTitleContent] = useState("");
   let [blockBylineContent, setBlockBylineContent] = useState("");
-  let [block1Content, setBlock1Content] = useState("1"); //the actual content itself
+
+  let [block1Content, setBlock1Content] = useState("1");
   let [block2Content, setBlock2Content] = useState("2");
+  let [array, setArray] = useState([block1Content, block2Content]);
 
   let [block1Order, setBlock1Order] = useState(0);
   let [block2Order, setBlock2Order] = useState(1);
 
-  let [array, setArray] = useState([block1Content, block2Content]);
-
-  // set block contents into an array and move them around in the array for sending them to the server in the correct order
-  // let array = [block1Content, block2Content];
-  // use these index numbers^ to set the flex order in the <li>s below to keep the order the same
-  // so, block 1's flex order should be array.indexOf(block1Content) -- maybe "block1Content"
 
   function block2Up() {
     [array[0], array[1]] = [array[1], array[0]];
@@ -37,14 +33,14 @@ function BlockEditor() {
 
   function seeDomTree() {
     // console.log(document.getElementsByTagName('*'));
-    console.log("array: ", array);
+    console.log("array: ", array); //TODO: array isn't updating automatically, need to reset the state after every change or just right before submitting?
     console.log("blockOrder: ", block1Order, block2Order);
+    console.log(block1Content);
   }
 
- setBlock1ContentFunction = (e) => {
-    setBlock1Content(e.target.value);
+  function setBlock1ContentFunction(value) {
+    setBlock1Content(value);
   }
-
   function setBlock2ContentFunction(value) {
     setBlock2Content(value);
   }
@@ -67,31 +63,18 @@ function BlockEditor() {
 
             {/* block1 */}
             <li className={`order-${block1Order}`}>
-              <label
-                htmlFor="paragraph block"
-                className="block">
-                <textarea
-                  type="text"
-                  className="form-textarea mt-1 block w-full"
-                  rows="3"
-                  {
-                  ...(block1Content === ""
-                    ?
-                    { placeholder: "This is a paragraph" }
-                    :
-                    { value: block1Content })
-                  }
-                  onChange={setBlock1ContentFunction}>
-                </textarea>
-              </label>
-            </li>
+                  <BlockSelector
+                    blockType={block1Type}
+                    blockContent={block1Content}
+                    setBlockContent={setBlock1ContentFunction} />
+                </li>
 
             {/* block2 */}
             {
               block2Render
                 ?
-                <li draggable="true" className={`order-${block2Order}`}>
-                  <Block
+                <li className={`order-${block2Order}`}>
+                  <BlockSelector
                     blockType={block2Type}
                     blockContent={block2Content}
                     setBlockContent={setBlock2ContentFunction} />
