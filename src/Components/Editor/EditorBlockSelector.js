@@ -1,22 +1,22 @@
 import React from 'react';
-import BlockParagraph from './BlockParagraph';
-import BlockList from './BlockList';
-import BlockCodePen from './BlockCodePen';
+import EditorBlockParagraph from './EditorBlockParagraph';
+import EditorBlockList from './EditorBlockList';
+import EditorBlockCodePen from './EditorBlockCodePen';
 
-function BlockSelector(props) {
+function EditorBlockSelector(props) {
     if (props.blockType === "paragraph") {
-      return <BlockParagraph 
+      return <EditorBlockParagraph 
       blockContent={props.blockContent} 
       setBlockContent={props.setBlockContent}/>
     } else if (props.blockType === "list") {
-      return <BlockList 
+      return <EditorBlockList 
       blockContent={props.blockContent} 
       setBlockContent={props.setBlockContent}/>
     } else if (props.blockType === "codepen") {
-      return <BlockCodePen 
+      return <EditorBlockCodePen 
       blockContent={props.blockContent} 
       setBlockContent={props.setBlockContent}/>
     } 
 };
 
-export default BlockSelector;
+export default EditorBlockSelector;

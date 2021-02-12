@@ -1,11 +1,11 @@
 import './App.css';
-import BlockEditor from './Components/Editor/BlockEditor.js';
+import EditorBlockEditor from './Components/Editor/EditorBlockEditor.js';
 
 function App() {
   return (
     <div>
       <h3>Untitled Article App</h3>
-      <BlockEditor />
+      <EditorBlockEditor />
     </div>
   );
 }

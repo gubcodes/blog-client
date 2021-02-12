@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BlockCodePen(props) {
+function EditorBlockCodePen(props) {
   //need to pass in blockType, blockContent, setBlockContent function
   return <label
     htmlFor="codepen block"
@@ -22,4 +22,4 @@ function BlockCodePen(props) {
   </label>
 };
 
-export default BlockCodePen;
+export default EditorBlockCodePen;

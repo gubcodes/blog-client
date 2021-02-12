@@ -1,18 +1,18 @@
 import React from 'react';
 
-function BlockList(props) {
-  //need to pass in blockType, blockContent, setBlock#Content function
+function EditorBlockParagraph(props) {
+  //need to pass in blockType, blockContent, setBlockContent function
   return <label
-    htmlFor="list block"
+    htmlFor="paragraph block"
     className="block">
     <textarea
       type="text"
       className="form-textarea mt-1 block w-full"
-      rows="4"
+      rows="3"
       {
       ...(props.blockContent === ""
         ?
-        { placeholder: "This \nis \na \nlist" }
+        { placeholder: "This is a paragraph" }
         :
         { value: props.blockContent })
       }
@@ -21,4 +21,4 @@ function BlockList(props) {
   </label>
 };
 
-export default BlockList;
+export default EditorBlockParagraph;
