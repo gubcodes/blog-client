@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import BlockSelector from './BlockSelector';
+import EditorBlockSelector from './EditorBlockSelector';
 
 //name ideas: ShortStack, breakUp, the Break Up
 
-function BlockEditor() {
+function EditorBlockEditor() {
   let [block2Render, setBlock2Render] = useState(false); //is block 2 visible?
   let [block1Type, setBlock1Type] = useState("paragraph");
   let [block2Type, setBlock2Type] = useState("test"); //what type of content is block 2?
@@ -63,7 +63,7 @@ function BlockEditor() {
 
             {/* block1 */}
             <li className={`order-${block1Order}`}>
-                  <BlockSelector
+                  <EditorBlockSelector
                     blockType={block1Type}
                     blockContent={block1Content}
                     setBlockContent={setBlock1ContentFunction} />
@@ -74,7 +74,7 @@ function BlockEditor() {
               block2Render
                 ?
                 <li className={`order-${block2Order}`}>
-                  <BlockSelector
+                  <EditorBlockSelector
                     blockType={block2Type}
                     blockContent={block2Content}
                     setBlockContent={setBlock2ContentFunction} />
@@ -96,4 +96,4 @@ function BlockEditor() {
   );
 }
 
-export default BlockEditor;
+export default EditorBlockEditor;
