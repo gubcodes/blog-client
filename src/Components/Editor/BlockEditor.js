@@ -11,8 +11,8 @@ function BlockEditor() {
   let [blockTitleContent, setBlockTitleContent] = useState("");
   let [blockBylineContent, setBlockBylineContent] = useState("");
 
-  let [block1Content, setBlock1Content] = useState("1");
-  let [block2Content, setBlock2Content] = useState("2");
+  let [block1Content, setBlock1Content] = useState("");
+  let [block2Content, setBlock2Content] = useState("");
   let [array, setArray] = useState([block1Content, block2Content]);
 
   let [block1Order, setBlock1Order] = useState(0);
