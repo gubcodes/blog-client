@@ -1,11 +1,15 @@
 import './App.css';
-import EditorBlockEditor from './Components/Editor/EditorBlockEditor.js';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Navigation from './Components/Navigation/Navigation';
 
 function App() {
   return (
     <div>
-      <h3>Untitled Article App</h3>
-      <EditorBlockEditor />
+      <Router>
+      <Navigation />
+      </Router>
+      {/* add footer here */}
     </div>
   );
 }
