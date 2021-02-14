@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Article from '../../Pages/Article';
 import Editor from '../../Pages/Editor';
 import Landing from '../../Pages/Landing';
-import Profile from '../../Pages/Article';
+import Profile from '../../Pages/Profile';
 
 function Navigation(props) {
 
