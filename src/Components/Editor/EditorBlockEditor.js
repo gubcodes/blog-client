@@ -46,11 +46,12 @@ function EditorBlockEditor() {
   }
 
   return (
-    <div className='text-center'>
+    // this is where we set the responsive column width of the editor - these will all be the same for each page's main component
+    <div className='col-start-2 col-end-12 md:col-start-3 md:col-end-11 xl:col-start-4 xl:col-end-10 text-center border-solid border-gray-200 border-2'>
       <h3>BlockEditor</h3>
       <br />
       <div className='content-center'>
-        <form className='w-3/6 inline-block'>
+        <form className='w-full inline-block'>
           {/* title */}
           <label htmlFor="title block" className="block">
             <input type="text" className="form-input mt-1 block w-full font-bold" placeholder="How to write a ShortStack article" />
