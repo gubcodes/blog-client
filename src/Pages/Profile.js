@@ -1,10 +1,20 @@
-import React from 'react';
+import { React, useState } from 'react';
+import ProfileSecondaryNavigation from '../Components/Profile/ProfileSecondaryNavigation';
 
 function Profile(props) {
-  
+  const [currentPage, setCurrentPage] = useState('dashboard');
+
+  function setPage(value) {
+    setCurrentPage(value);
+    // we also need to trigger the appropriate articles fetch here
+  }
+
   return (
     <div>
-      <h1>Profile Page</h1>
+      <ProfileSecondaryNavigation 
+      currentPage={currentPage}
+      setPage={setPage} 
+      />
     </div>
   )
 };

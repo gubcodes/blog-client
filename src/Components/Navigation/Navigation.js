@@ -13,6 +13,11 @@ function Navigation(props) {
         <div className="col-start-1 col-end-5 mt-auto mb-auto">
           <a href="/"><h2>brand</h2></a>
         </div>
+        <div className="col-start-5 col-end-9 mt-auto mb-auto">
+          <form>
+            <input type="search" placeholder="search" className="w-full border-2"></input>
+          </form>
+        </div>
         <div className="col-start-9 col-end-11 mt-auto mb-auto">
           <a href="/profile"><h4>profile</h4></a>
         </div>
@@ -23,26 +28,26 @@ function Navigation(props) {
       {/* page routing below - not visible */}
       <Switch>
         <Route exact path="/">
-          <Landing 
-          title="landing"
+          <Landing
+            title="landing"
           // pass props here
           />
         </Route>
         <Route exact path="/article/:id">
-          <Article 
-          title="article"
+          <Article
+            title="article"
           // pass props here
           />
         </Route>
         <Route exact path="/editor">
-          <Editor 
-          title="editor"
+          <Editor
+            title="editor"
           // pass props here
           />
         </Route>
         <Route exact path="/profile">
-          <Profile 
-          title="profile"
+          <Profile
+            title="profile"
           // pass props here
           />
         </Route>
